@@ -1,0 +1,15 @@
+@use "./variables.scss" as variables;
+
+.container {
+  height: 100vh;
+  width: 100%;
+}
+
+.Toastify__toast {
+  border: 1px solid variables.$theme-color;
+  border-radius: 0;
+}
+
+.custom--toast--container {
+  color: variables.$theme-color;
+}

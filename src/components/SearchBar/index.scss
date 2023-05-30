@@ -1,0 +1,140 @@
+@use "../../variables.scss" as variables;
+
+.search--container {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 400px;
+  border: none;
+  box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+
+  input {
+    height: 30px;
+    width: 100%;
+    border: 1px solid variables.$theme-color;
+    outline: none;
+    padding: 6px;
+    box-sizing: border-box;
+  }
+
+  .icon--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    border: 1px solid variables.$theme-color;
+    background-color: white;
+
+    box-sizing: border-box;
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .icon---locate {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+  }
+  .icon--search {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .responsive--table {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    column-gap: 2px;
+    margin-top: 4px;
+
+    .item--tag {
+      position: relative;
+      padding: 2px 6px;
+      background-color: white;
+      border: 1px solid variables.$theme-color;
+      max-width: calc(60% + 5px);
+      min-width: 60px;
+      @media (min-width: 1000px) {
+        display: none;
+      }
+
+      p {
+        width: 80%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 100%;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    border: 1px solid variables.$theme-color;
+    background-color: white;
+    li {
+      padding: 6px;
+
+      cursor: pointer;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      box-sizing: border-box;
+
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        vertical-align: middle;
+        height: 18px;
+      }
+    }
+    li:hover {
+      border-top: 1px solid variables.$theme-color;
+      border-bottom: 1px solid variables.$theme-color;
+    }
+    li:first-of-type:hover {
+      border-top: 1px solid white;
+    }
+    li:last-of-type:hover {
+      border-bottom: 1px solid white;
+    }
+
+    li:focus-visible {
+      border-top: 1px solid variables.$theme-color;
+      border-bottom: 1px solid variables.$theme-color;
+      outline: none;
+    }
+    li:first-of-type:focus-visible {
+      border-top: 1px solid white;
+      outline: none;
+    }
+    li:last-of-type:focus-visible {
+      border-bottom: 1px solid white;
+    }
+  }
+}
